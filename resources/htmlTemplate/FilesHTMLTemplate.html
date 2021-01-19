@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Generated from the SPDX Viewer tools (see spdx.org/tools) -->
+<title>{{name}}</title>
+</head>
+<body>
+<h2>SPDX File Information for {{about}}</h2>
+{{#hasFile}}
+<h3 id="{{spdxId}}">File Name: {{fileName}}</h3>
+SPDXID: {{spdxId}}<br />
+<ul>
+{{#fileType}}
+<li>File Type: {{.}}</li>
+{{/fileType}}
+</ul>
+<h4>Checksums:</h4>
+<ul>
+{{#checksums}}
+<li>{{.}}</li>
+{{/checksums}}
+</ul>
+Concluded License:{{licenseConcluded}}<br />
+<h4>License Information from Files</h4>
+<ul>
+{{#licenseInfoInFile}}
+    <li>{{.}}</li>
+{{/licenseInfoInFile}}
+</ul>
+{{#licenseComments}}
+License Comments: {{.}}<br />
+{{/licenseComments}}
+Copyright Text: {{copyrightText}}<br />
+{{#artifactOf}}
+Artifact of Project: {{name}};
+{{#homepage}}
+Artifact of Home Page: {{.}};
+{{/homepage}}
+Artifact of URI: {{ArtifactOfProjectURI}}<br />
+{{/artifactOf}}
+{{#comment}}
+File comment: {{.}}<br />
+{{/comment}}
+{{#noticeText}}
+Notice Text: {{.}}<br />
+{{/noticeText}}
+Contributors:<br />
+<ul>
+{{#contributors}}
+<li>{{.}}</li>
+{{/contributors}}
+</ul>
+Attribution Text:<br />
+<ul>
+{{#attributionText}}
+<li>{{.}}</li>
+{{/attributionText}}
+</ul>
+<h4>Dependencies:</h4>
+<ul>
+{{#fileDependencies}}
+<li>{{.}}</li>
+{{/fileDependencies}}
+</ul>
+<h4>Relationships:</h4>
+<ul>
+{{#fileRelationships}}
+<li>{{type}}:<a href="{{elementLink}}">{{relatedElementId}}</a>{{#comment}} ({{comment}}){{/comment}}</li>
+{{/fileRelationships}}
+</ul>
+<h4>Annotations:</h4>
+<ul>
+{{#fileAnnotations}}
+<li>{{type}}-{{annotator}},{{date}}:{{comment}}</li>
+{{/fileAnnotations}}
+</ul>
+<h4>Snippets:</h4>
+<ul>{{#fileSnippets}}
+<li>Snippet ID: <a href="{{elementLink}}">{{id}}</a></li>
+{{/fileSnippets}}
+</ul>
+{{/hasFile}}
+</body>
+</html>
