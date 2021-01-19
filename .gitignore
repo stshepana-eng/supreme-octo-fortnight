@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings/
+*.launch
+/bin
+/target
+/reports
+/release.properties
+/pom.xml.releaseBackup
+SPDXParser.spdx
+maven-eclipse.xml
